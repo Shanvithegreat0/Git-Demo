@@ -63,6 +63,17 @@ async def findingElement(ele:str):
     return {"Element":ele,"Message":f"{ele} is present in the database"}
   else:
     return {"Element":ele,"Message":f"{ele} not present in the database"}
+  
+# changes here from list to tuple
+data = ("aaa","bbb","ccc","ddd","eee")
+
+@FastAPIExample.get("/finding/")
+
+async def findingElement(ele:str):
+  if ele in data:
+    return {"Element":ele,"Message":f"{ele} is present in the database"}
+  else:
+    return {"Element":ele,"Message":f"{ele} not present in the database"}
     
 
 
