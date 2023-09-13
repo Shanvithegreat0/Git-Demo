@@ -78,3 +78,13 @@ async def findingElement(ele:str):
 
 
 # uvicorn main:FastAPIExample --reload
+
+data = ["just","random","changes","ddd","eee"]
+
+@FastAPIExample.get("/finding/")
+
+async def findingElement(ele:str):
+  if ele in data:
+    return {"Element":ele,"Message":f"{ele} is present in the database"}
+  else:
+    return {"Element":ele,"Message":f"{ele} not present in the database"}
